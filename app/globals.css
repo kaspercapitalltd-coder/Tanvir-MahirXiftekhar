@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #050505;
+  --color-surface: #0D0D0D;
+  --color-gold: #D4AF37;
+  --color-gold-rich: #C6A55C;
+  --color-gold-glow: rgba(212, 175, 55, 0.5);
+  
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-space-grotesk);
+  --font-mono: var(--font-jetbrains);
+}
+
+@layer utilities {
+  .DropShadow-md {
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+  }
+  .DropShadow-lg {
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.8));
+  }
+}
+
+html, body {
+  background-color: var(--color-background);
+  color: white;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: black;
+}
+
+.markdown-body {
+  @apply text-zinc-300 leading-relaxed font-light text-lg;
+}
+.markdown-body h2 {
+  @apply text-3xl font-display text-white mt-12 mb-6 tracking-tight;
+}
+.markdown-body h3 {
+  @apply text-2xl font-display text-zinc-100 mt-8 mb-4;
+}
+.markdown-body p {
+  @apply mb-6;
+}
+.markdown-body ul {
+  @apply list-disc list-inside mb-6 space-y-2;
+}
+.markdown-body strong {
+  @apply text-white font-medium;
+}
